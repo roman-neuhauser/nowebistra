@@ -1,0 +1,55 @@
+.. vim: ft=rst sts=2 sw=2 tw=77
+.. default-role:: literal
+
+=============================================================================
+                                  noWebistra
+=============================================================================
+-----------------------------------------------------------------------------
+             Enables transitioning from Webistrano to Capistrano
+-----------------------------------------------------------------------------
+
+:Author: Roman Neuhauser
+:Contact: neuhauser@sigpipe.cz
+:Copyright: This document is in the public domain.
+
+.. this file is marked up using reStructuredText
+   lines beginning with ".." are reST directives
+   "foo_" or "`foo bar`_" is a link, defined at ".. _foo" or ".. _foo bar"
+   "::" introduces a literal block (usually some form of code)
+   "`foo`" is some kind of identifier
+   suspicious backslashes in the text ("`std::string`\s") are required for
+   reST to recognize the preceding character as syntax
+
+.. contents::
+
+Synopsis
+========
+
+::
+
+  ./nowebistra.sh config/deploy
+  cap deploy:migrate $stage $project
+
+Description
+===========
+
+noWebistra enables transitioning away from Webistrano to plain Capistrano.
+Capistrano's promise is "Capistrano deployment the easy way".
+Turns out there's nothing complicated or hard about deploying with
+Capistrano, all that Webistrano does is provide a cumbersome deployment log
+viewer in a horribly slow web user interface.
+
+`nowebistra.sh` extracts data from a webistrano database and stores them
+in a tree of text files.
+The output is structured so as to make automatic processing very easy.
+You can transform this output into a traditional config/deploy.rb by hand,
+or you use it as-is, e. g. with the included `Capfile`.
+
+`Capfile` uses the generated files to configure Capistrano at runtime.
+
+Status
+======
+
+noWebistra is in early development.
+Expect sharp edges and loose ends.
+
