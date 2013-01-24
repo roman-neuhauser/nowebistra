@@ -47,6 +47,11 @@ or you use it as-is, e. g. with the included `Capfile`.
 
 `Capfile` uses the generated files to configure Capistrano at runtime.
 
+License
+=======
+
+noWebistra is distributed under the MIT license.  See the `LICENSE` file.
+
 Status
 ======
 
