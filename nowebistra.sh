@@ -49,8 +49,8 @@ FROM configuration_parameters cp
 , projects p
 , stages s
 WHERE cp.stage_id = s.id
-AND s.project_id = p.id
-AND cp.type = 'StageConfiguration'
+  AND s.project_id = p.id
+  AND cp.type = 'StageConfiguration'
 SQL
 while read row; do
   set -- $row
@@ -71,7 +71,10 @@ q <<-'SQL' |
   , CASE `primary` WHEN 0 THEN '' ELSE 'primary' END prim
   , CASE no_release WHEN 0 THEN '' ELSE 'no_release' END norel
   FROM projects p, stages s, roles r, hosts h
-  WHERE p.id = s.project_id AND r.stage_id = s.id AND r.host_id = h.id ORDER BY path, host
+  WHERE p.id = s.project_id
+    AND r.stage_id = s.id
+    AND r.host_id = h.id
+  ORDER BY path, host
 SQL
 while read row; do
   set -- $row
@@ -102,7 +105,9 @@ q <<-'SQL' |
     LOWER(REPLACE(CONCAT_WS('/', p.name, s.name), ' ', '_')) path
   , rs.recipe_id
   FROM projects p, stages s, recipes_stages rs
-  WHERE p.id = s.project_id AND rs.stage_id = s.id ORDER BY path, recipe_id
+  WHERE p.id = s.project_id
+    AND rs.stage_id = s.id
+  ORDER BY path, recipe_id
 SQL
 while read row; do
   set -- $row
