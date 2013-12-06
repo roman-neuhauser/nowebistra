@@ -34,7 +34,7 @@ Description
 ===========
 
 noWebistra enables transitioning away from Webistrano to plain Capistrano.
-Capistrano's promise is "Capistrano deployment the easy way".
+Webistrano's promise is "Capistrano deployment the easy way".
 Turns out there's nothing complicated or hard about deploying with
 Capistrano, all that Webistrano does is provide a cumbersome deployment log
 viewer in a horribly slow web user interface.
@@ -43,7 +43,7 @@ viewer in a horribly slow web user interface.
 in a tree of text files.
 The output is structured so as to make automatic processing very easy.
 You can transform this output into a traditional config/deploy.rb by hand,
-or you use it as-is, e. g. with the included `Capfile`.
+or use it as-is, e. g. with the included `Capfile`.
 
 `Capfile` uses the generated files to configure Capistrano at runtime.
 
