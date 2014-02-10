@@ -1,3 +1,7 @@
+# vim: ft=ruby
+# Copyright (c) Roman Neuhauser
+# Distributed under the MIT license (see LICENSE file)
+
 load 'deploy'
 
 P, S = ARGV[2], ARGV[1]
